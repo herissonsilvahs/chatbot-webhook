@@ -13,7 +13,7 @@ app.disable('x-powered-by')
 app.enable('trust proxy')
 
 // Connection MongoDB
-require('./services/MongoDBService')
+// require('./services/MongoDBService')
 
 // ROUTES
 require('./routes/index')(app)
