@@ -19,8 +19,9 @@ module.exports = async (parameters) => {
       let compare = currencyToLocalString(compareCurrency ,rates[compareCurrency])
       const message = `1 ${currencyFrom} ta valendo ${compare}`
       return {
-        message,
-        fulfillmentText: message
+        message: {
+          message
+        }
       }
     } else if(!amount || !currencyTo) throw new Error("Missing params")
 
