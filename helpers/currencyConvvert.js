@@ -2,12 +2,10 @@ const CurrencyApiService = require('../services/CurrencyApiService')
 
 module.exports = async (parameters) => {
   try {
-    if (!parameters) return new Error("Parameters not be null")
-    console.log(parameters)
+    if (!parameters) throw new Error("Parameters not be null")
     const currencyTo = parameters['currency-to']
     const currencyFrom = parameters['currency-from']
     const amount = parameters['amount']
-    console.log(currencyFrom, currencyTo, amount)
 
     if (!amount || !currencyFrom || !currencyTo) throw new Error("Missing params")
 
