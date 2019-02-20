@@ -9,7 +9,7 @@ module.exports = async (parameters) => {
     const amount = parameters['amount']
     const activity = parameters['activity']
 
-    if (!amount || !currencyFrom) throw new Error("Missing params")
+    if (!currencyFrom) throw new Error("Missing params")
 
     const currencies = (await CurrencyApiService.get(`latest?base=${currencyFrom}`)).data
     const { date, rates } = currencies
@@ -18,7 +18,7 @@ module.exports = async (parameters) => {
       const compareCurrency = currencyTo || 'BRL'
       let compare = currencyToLocalString(compareCurrency ,rates[compareCurrency])
       return {message: `1 ${currencyFrom} ta valendo ${compare}`}
-    } else if(!currencyTo) throw new Error("Missing params")
+    } else if(!amount || !currencyTo) throw new Error("Missing params")
 
     let convertedResult = currencyToLocalString(currencyTo, rates[currencyTo] * amount)
 
