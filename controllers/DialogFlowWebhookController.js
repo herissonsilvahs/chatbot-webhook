@@ -1,12 +1,12 @@
-const currencyConvert = require('../helpers/currencyConvvert')
+const currencyConvert = require('../helpers/currencyConvert')
 
 module.exports = {
   async start (req, res) {
     try {
       const { queryResult } = req.body
       if (queryResult.action === 'currency.convert') {
-        const valueConverted = await currencyConvert(queryResult.parameters)
-        return res.status(200).json({message: `O Valor convertido é ${valueConverted}`})
+        const message = await currencyConvert(queryResult.parameters)
+        return res.status(200).json(message)
       }
       return res.status(200).json({message: "Desculpa não consegui converter, tente novamente!"})
     } catch (err) {
