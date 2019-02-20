@@ -19,15 +19,29 @@ module.exports = async (parameters) => {
       let compare = currencyToLocalString(compareCurrency ,rates[compareCurrency])
       const message = `1 ${currencyFrom} ta valendo ${compare}`
       return {
-        message: {
-          message
-        }
+        "fulfillmentText": message,
+        "fulfillmentMessages": [
+          {
+            "text": {
+              "text": [message]
+            }
+          }
+        ],
       }
     } else if(!amount || !currencyTo) throw new Error("Missing params")
 
-    let convertedResult = currencyToLocalString(currencyTo, rates[currencyTo] * amount)
-
-    return {message: `O Valor convertido é ${convertedResult}`}
+    const convertedResult = currencyToLocalString(currencyTo, rates[currencyTo] * amount)
+    const message = `O Valor convertido é ${convertedResult}`
+    return {
+      "fulfillmentText": message,
+      "fulfillmentMessages": [
+        {
+          "text": {
+            "text": [message]
+          }
+        }
+      ],
+    }
   } catch (err) {
     throw new Error(err)
   }
