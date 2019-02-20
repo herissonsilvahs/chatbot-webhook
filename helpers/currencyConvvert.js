@@ -3,6 +3,7 @@ const CurrencyApiService = require('../services/CurrencyApiService')
 module.exports = async (parameters) => {
   try {
     if (!parameters) return new Error("Parameters not be null")
+    console.log(parameters)
     const currencyTo = parameters['currency-to'].stringValue
     const currencyFrom = parameters['currency-from'].stringValue
     const amount = parameters['amount'].numberValue
