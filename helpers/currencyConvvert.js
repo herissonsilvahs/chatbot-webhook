@@ -4,10 +4,9 @@ module.exports = async (parameters) => {
   try {
     if (!parameters) return new Error("Parameters not be null")
     console.log(parameters)
-    const currencyTo = parameters['currency-to'].stringValue
-    const currencyFrom = parameters['currency-from'].stringValue
-    const amount = parameters['amount'].numberValue
-
+    const currencyTo = parameters['currency-to']
+    const currencyFrom = parameters['currency-from']
+    const amount = parameters['amount']
     console.log(currencyFrom, currencyTo, amount)
 
     if (!amount || !currencyFrom || !currencyTo) throw new Error("Missing params")
