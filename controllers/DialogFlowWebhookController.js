@@ -9,7 +9,7 @@ module.exports = {
         return res.status(200).json(message)
       }
       return res.status(200).json({
-        "fulfillmentText": "Desculpa não entendi",
+        "fulfillmentText": ["Desculpa não entendi", "Foi mal não entendi"],
         "fulfillmentMessages": [
           {
             "text": {
@@ -21,7 +21,7 @@ module.exports = {
     } catch (err) {
       // const objError = {error: {errorName: err.name, errorMessage: err.message}}
       res.status(500).json({
-        "fulfillmentText": "Desculpa não entendi",
+        "fulfillmentText": ["Desculpa não entendi", "Foi mal não entendi"],
         "fulfillmentMessages": [
           {
             "text": {
