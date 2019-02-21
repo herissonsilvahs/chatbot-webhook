@@ -2,6 +2,23 @@ const currencyConvert = require('../helpers/currencyConvert')
 
 module.exports = {
   async start (req, res) {
+    const customResponse = {
+      "payload": {
+        "google": {
+          "expectUserResponse": true,
+          "richResponse": {
+            "items": [
+              {
+                "simpleResponse": {
+                  "textToSpeech": "foi mal, não entendi"
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+
     try {
       const { queryResult } = req.body
       if (queryResult.action === 'currency.convert') {
@@ -9,26 +26,9 @@ module.exports = {
         return res.status(200).json(message)
       }
 
-      return res.status(200).json({
-        "payload": {
-          "google": {
-            "expectUserResponse": true,
-            "richResponse": {
-              "items": [
-                {
-                  "simpleResponse": {
-                    "textToSpeech": "foi mal, não entendi"
-                  }
-                }
-              ]
-            }
-          }
-        }
-      })
+      return res.status(200).json(customResponse)
     } catch (err) {
-      res.status(200).json({
-        "fulfillmentText": "Desculpa não entendi"
-      })
+      res.status(500).json(customResponse)
     }
   }
 }
