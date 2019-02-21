@@ -10,25 +10,59 @@ module.exports = {
       }
       return res.status(200).json({
         "fulfillmentText": "Desculpa não entendi",
-        "fulfillmentMessages": [
-          {
-            "text": {
-              "text": ["Foi mal, não entendi"]
+        "payload": {
+          "google": {
+            "expectUserResponse": false,
+            "richResponse": {
+              "items": [
+                {
+                  "response1": {
+                    "textToSpeech": "foi mal, não entendi"
+                  }
+                },
+                {
+                  "response2": {
+                    "textToSpeech": "desculpa, não entendi"
+                  }
+                },
+                {
+                  "response3": {
+                    "textToSpeech": "não entendi, brother"
+                  }
+                }
+              ]
             }
           }
-        ]
+        }
       })
     } catch (err) {
       // const objError = {error: {errorName: err.name, errorMessage: err.message}}
       res.status(500).json({
         "fulfillmentText": "Desculpa não entendi",
-        "fulfillmentMessages": [
-          {
-            "text": {
-              "text": ["Foi mal, não entendi"]
+        "payload": {
+          "google": {
+            "expectUserResponse": false,
+            "richResponse": {
+              "items": [
+                {
+                  "response1": {
+                    "textToSpeech": "foi mal, não entendi"
+                  }
+                },
+                {
+                  "response2": {
+                    "textToSpeech": "desculpa, não entendi"
+                  }
+                },
+                {
+                  "response3": {
+                    "textToSpeech": "não entendi, brother"
+                  }
+                }
+              ]
             }
           }
-        ]
+        }
       })
     }
   }
