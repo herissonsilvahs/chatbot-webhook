@@ -9,25 +9,14 @@ module.exports = {
         return res.status(200).json(message)
       }
       return res.status(200).json({
-        "fulfillmentText": "Desculpa não entendi",
         "payload": {
           "google": {
-            "expectUserResponse": false,
+            "expectUserResponse": true,
             "richResponse": {
               "items": [
                 {
-                  "response1": {
-                    "textToSpeech": "foi mal, não entendi"
-                  }
-                },
-                {
-                  "response2": {
-                    "textToSpeech": "desculpa, não entendi"
-                  }
-                },
-                {
-                  "response3": {
-                    "textToSpeech": "não entendi, brother"
+                  "simpleResponse": {
+                    "textToSpeech": "this is a simple response"
                   }
                 }
               ]
@@ -38,31 +27,7 @@ module.exports = {
     } catch (err) {
       // const objError = {error: {errorName: err.name, errorMessage: err.message}}
       res.status(500).json({
-        "fulfillmentText": "Desculpa não entendi",
-        "payload": {
-          "google": {
-            "expectUserResponse": false,
-            "richResponse": {
-              "items": [
-                {
-                  "response1": {
-                    "textToSpeech": "foi mal, não entendi"
-                  }
-                },
-                {
-                  "response2": {
-                    "textToSpeech": "desculpa, não entendi"
-                  }
-                },
-                {
-                  "response3": {
-                    "textToSpeech": "não entendi, brother"
-                  }
-                }
-              ]
-            }
-          }
-        }
+        "fulfillmentText": "Desculpa não entendi"
       })
     }
   }
