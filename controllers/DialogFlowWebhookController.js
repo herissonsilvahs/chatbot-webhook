@@ -18,14 +18,40 @@ module.exports = {
                   "simpleResponse": {
                     "textToSpeech": "foi mal, não entendi"
                   }
-                },
-                {
-                  "simpleResponse": {
-                    "textToSpeech": "não entendi, brother"
-                  }
                 }
               ]
             },
+
+            "systemIntent": {
+              "intent": "actions.intent.OPTION",
+              "data": {
+                "@type": "type.googleapis.com/google.actions.v2.OptionValueSpec",
+                "listSelect": {
+                  "title": "Açoes",
+                  "items": [
+                    {
+                      "optionInfo": {
+                        "key": "SELECTION_KEY_CONVERCAO",
+                        "synonyms": [
+                          "Converter"
+                        ]
+                      },
+                      "title": "Converter moedas"
+                    },
+                    {
+                      "optionInfo": {
+                        "key": "SELECTION_KEY_COTACAO",
+                        "synonyms": [
+                          "Cotação do dolar",
+                          "Valor do dolar"
+                        ]
+                      },
+                      "title": "Cotação"
+                    }
+                  ]
+                }
+              }
+            }
           }
         }
       })
