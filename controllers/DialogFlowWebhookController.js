@@ -30,6 +30,30 @@ module.exports = {
                   }
                 }
               ]
+            },
+
+            "systemIntent": {
+              "intent": "actions.intent.OPTION",
+              "data": {
+                "@type": "type.googleapis.com/google.actions.v2.OptionValueSpec",
+                "listSelect": {
+                  "title": "O que fazer?",
+                  "items": [
+                    {
+                      "optionInfo": {
+                        "key": "converter"
+                      },
+                      "title": "Converter moedas"
+                    },
+                    {
+                      "optionInfo": {
+                        "key": "cotação"
+                      },
+                      "title": "Cotação do dolar atual"
+                    }
+                  ]
+                }
+              }
             }
           }
         }
