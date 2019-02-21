@@ -8,6 +8,7 @@ module.exports = {
         const message = await currencyConvert(queryResult.parameters)
         return res.status(200).json(message)
       }
+
       return res.status(200).json({
         "payload": {
           "google": {
