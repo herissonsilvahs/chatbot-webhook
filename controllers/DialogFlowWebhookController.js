@@ -20,41 +20,12 @@ module.exports = {
                   }
                 },
                 {
-                  "simpleResponse2": {
-                    "textToSpeech": "não entendi brother"
-                  }
-                },
-                {
-                  "simpleResponse3": {
-                    "textToSpeech": "cara, não entendi"
+                  "simpleResponse": {
+                    "textToSpeech": "não entendi, brother"
                   }
                 }
               ]
             },
-
-            "systemIntent": {
-              "intent": "actions.intent.OPTION",
-              "data": {
-                "@type": "type.googleapis.com/google.actions.v2.OptionValueSpec",
-                "listSelect": {
-                  "title": "O que fazer?",
-                  "items": [
-                    {
-                      "optionInfo": {
-                        "key": "converter"
-                      },
-                      "title": "Converter moedas"
-                    },
-                    {
-                      "optionInfo": {
-                        "key": "cotação"
-                      },
-                      "title": "Cotação do dolar atual"
-                    }
-                  ]
-                }
-              }
-            }
           }
         }
       })
