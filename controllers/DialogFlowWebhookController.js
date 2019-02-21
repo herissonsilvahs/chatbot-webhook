@@ -16,7 +16,17 @@ module.exports = {
               "items": [
                 {
                   "simpleResponse": {
-                    "textToSpeech": "this is a simple response"
+                    "textToSpeech": "foi mal, não entendi"
+                  }
+                },
+                {
+                  "simpleResponse": {
+                    "textToSpeech": "não entendi brother"
+                  }
+                },
+                {
+                  "simpleResponse": {
+                    "textToSpeech": "cara, não entendi"
                   }
                 }
               ]
