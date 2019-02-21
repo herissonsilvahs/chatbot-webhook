@@ -20,12 +20,12 @@ module.exports = {
                   }
                 },
                 {
-                  "simpleResponse": {
+                  "simpleResponse2": {
                     "textToSpeech": "não entendi brother"
                   }
                 },
                 {
-                  "simpleResponse": {
+                  "simpleResponse3": {
                     "textToSpeech": "cara, não entendi"
                   }
                 }
