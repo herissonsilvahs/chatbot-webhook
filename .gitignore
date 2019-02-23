@@ -1,2 +1,5 @@
 node_modules
 .log*
+*8682f03bfa0e.json
+nodemon.json
+.gitlab-ci.yml
