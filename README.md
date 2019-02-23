@@ -2,7 +2,7 @@
 
 ### Need setup some ENVs:
 
-googleProjectID: "GOOGLEAPP",
-GOOGLE_APPLICATION_CREDENTIALS: "PATHTOJSONGERADOPELOGOOGLE",
-dialogFlowSessionLanguageCode: "pt-BR"
+* googleProjectID: "GOOGLEAPP",
+* GOOGLE_APPLICATION_CREDENTIALS: "PATHTOJSONGERADOPELOGOOGLE",
+* dialogFlowSessionLanguageCode: "pt-BR"
 
